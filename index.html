@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ummeed ke liye 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Ummeed 💖</h1>
+  <p class="question">Will you be my wifey? 😍</p>
+  <div class="buttons">
+    <button id="yes" onclick="yesClick()">Yes 💕</button>
+    <button id="no">No 😢</button>
+  </div>
+  <p class="message">- Ek khaas kisi se 💌</p>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    let clickCount = 0;
+
+    noBtn.addEventListener('mouseover', () => {
+      clickCount++;
+      if(clickCount <= 12){
+        const x = Math.random() * 70;
+        const y = Math.random() * 70;
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = x + '%';
+        noBtn.style.top = y + '%';
+      } else {
+        noBtn.style.left = '50%';
+        noBtn.style.top = '60%';
+        noBtn.style.position = 'absolute';
+      }
+    });
+
+    function yesClick(){
+      document.body.innerHTML = `
+        <h1>💖 Yay! 💖</h1>
+        <p>Ummeed, tum meri wifey ban gayi 😘</p>
+        <p>Love ❤️ hamesha ke liye</p>
+      `;
+    }
+  </script>
+</body>
+</html>
