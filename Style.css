@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+  background: pink;
+  font-family: sans-serif;
+  padding-top: 50px;
+}
+h1 { color: red; }
+.heart { font-size: 50px; animation: beat 1s infinite; }
+@keyframes beat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+button { padding: 10px 20px; font-size: 18px; margin-top: 20px; cursor: pointer; border: none; background: red; color: white; border-radius: 10px; }
+p { font-size: 20px; }
