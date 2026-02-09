@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Ummeed ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+.screen{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:30px;
+    position:relative;
+}
+.active{ display:flex; animation:fade 1s ease; }
+@keyframes fade{
+    from{opacity:0;transform:scale(0.95);}
+    to{opacity:1;transform:scale(1);}
+}
+button,input{
+    margin-top:25px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+}
+button{
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+input{
+    width:200px;
+    text-align:center;
+}
+#runBtn{
+    position:absolute;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+#yesBtn{
+    transition: all 0.3s ease;
+}
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    user-select:none;
+    position:relative;
+}
+.heart{
+    position:absolute;
+    color:pink;
+    font-size:20px;
+    user-select:none;
+    animation:fall 2s linear forwards;
+}
+@keyframes fall{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-50px);opacity:0;}
+}
+#giftText{
+    font-size:30px;
+    margin-top:20px;
+    display:none;
+    color:#ff4d6d;
+    font-weight:bold;
+    animation:fadeIn 2s ease forwards;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(0.8);}
+    to{opacity:1;transform:scale(1);}
+}
+body, .screen{
+    transition: background 1.5s ease;
+}
+</style>
+</head>
+<body>
+
+<!-- Hearts container -->
+<div id="hearts-container"></div>
+
+<!-- Screen 1: Password -->
+<div id="s1" class="screen active" style="background:linear-gradient(120deg,#ff9a9e,#fad0c4);">
+    <h2>Sirf Ummeed hi ye surprise open kar sakti hai 💖</h2>
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="checkPass()">Open 💘</button>
+</div>
+
+<!-- Screen 2: Funny Love Question -->
+<div id="s2" class="screen" style="background:linear-gradient(120deg,#a18cd1,#fbc2eb);">
+    <h2>Kya tum Murshid se pyaar karti ho? 😍</h2>
+    <button onclick="next(3)">Yes 💖</button>
+    <button onclick="next(3)">Obviously Yes 😘</button>
+    <button onclick="next(3)">Bilkul Yes ❤️</button>
+</div>
+
+<!-- Screen 3: Running Button Fun -->
+<div id="s3" class="screen" style="background:linear-gradient(120deg,#89f7fe,#66a6ff);">
+    <h2>Aage badhne ke liye button pakdo 😜</h2>
+    <button id="runBtn" onmouseover="moveBtn()" onclick="next(4)">Catch Me</button>
+</div>
+
+<!-- Romantic Story Screens (example 5 screens) -->
+<div id="s4" class="screen" style="background:linear-gradient(120deg,#ff9a9e,#fecfef);"><h2>Ummeed 🌹 Tum naam nahi, meri aadat ho 💓</h2><button onclick="next(5)">Next</button></div>
+<div id="s5" class="screen" style="background:linear-gradient(120deg,#a1c4fd,#c2e9fb);"><h2>Pata nahi tumse kaise mila, par ab tumhare bina rehna mushkil hai 💞</h2><button onclick="next(6)">Next</button></div>
+<div id="s6" class="screen" style="background:linear-gradient(120deg,#fbc2eb,#a6c1ee);"><h2>Tum meri zindagi ki wo kami ho, jo tum milne ke baad puri ho gayi ✨</h2><button onclick="next(7)">Next</button></div>
+<div id="s7" class="screen" style="background:linear-gradient(120deg,#ffecd2,#fcb69f);"><h2>Tumhari smile mera mood theek kar deti hai 😊</h2><button onclick="next(8)">Next</button></div>
+<div id="s8" class="screen" style="background:linear-gradient(120deg,#f6d365,#fda085);"><h2>Tumhari awaaz mera favourite sound hai 🎶</h2><button onclick="next(9)">Next</button></div>
+
+<!-- Promise Screens -->
+<div id="s9" class="screen" style="background:linear-gradient(120deg,#ff758c,#ff7eb3);"><h2>Main hamesha tumhara saath dunga 🤝</h2><button onclick="next(10)">Next</button></div>
+<div id="s10" class="screen" style="background:linear-gradient(120deg,#c3cfe2,#c3cfe2);"><h2>Chahe kuch bhi ho jaye, main tumhe kabhi akela nahi chhodunga 💗</h2><button onclick="next(11)">Next</button></div>
+
+<!-- Surprise Offer Screen -->
+<div id="s11" class="screen" style="background:linear-gradient(120deg,#ffb347,#ffcc33);">
+<h2>Meri jaan, aapke liye ek aur surprise hai 😘<br>Dekhna chahoge?</h2>
+<button id="yesBtn" onclick="next(12)">Yes 💖</button>
+<button id="noBtn" onclick="noClicked()">No 😜</button>
+</div>
+
+<!-- Gift Box Screen -->
+<div id="s12" class="screen" style="background:linear-gradient(120deg,#89f7fe,#66a6ff);">
+<h2>Yay! Ek gift box 🎁</h2>
+<div class="gift" onclick="giftClicked()">🎁</div>
+<div id="giftText">Love you meri Ummeed 😘</div>
+</div>
+
+<!-- Thank You Screen -->
+<div id="s13" class="screen" style="background:linear-gradient(120deg,#ff9a9e,#fecfef);"><h2>Meri life me aane ke liye shukriya 🙏❤️</h2><button onclick="next(14)">Next</button></div>
+
+<!-- Final Screen -->
+<div id="s14" class="screen" style="background:linear-gradient(120deg,#ff758c,#ff7eb3);"><h2>Aapka Murshid 💝</h2></div>
+
+<script>
+// Hearts falling on background
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className='heart';
+    heart.style.left=Math.random()*90+'%';
+    heart.style.fontSize=(10+Math.random()*20)+'px';
+    heart.innerText='💖';
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove()},2000);
+}
+setInterval(createHeart,300);
+
+// Screen navigation
+function next(n){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('s'+n).classList.add('active');
+}
+
+// Password check
+function checkPass(){
+    let p = document.getElementById('pass').value;
+    if(p.toLowerCase() === "love you"){
+        next(2);
+    } else{
+        alert("Oops! Galat password 💔 Try again 😜");
+    }
+}
+
+// Running button logic
+let runCount = 0;
+function moveBtn(){
+    let btn = document.getElementById('runBtn');
+    if(runCount<5){
+        let x = Math.random()*70;
+        let y = Math.random()*70;
+        btn.style.left = x+"%";
+        btn.style.top = y+"%";
+        runCount++;
+    } else {
+        btn.style.position="static"; 
+    }
+}
+
+// Surprise Yes/No trick
+let yesBtn = document.getElementById('yesBtn');
+let noClickCount = 0;
+function noClicked(){
+    noClickCount++;
+    yesBtn.style.transform = `scale(${1 + noClickCount*0.2})`;
+}
+
+// Gift box click → 2s hearts then show message
+function giftClicked(){
+    const giftText = document.getElementById('giftText');
+    for(let i=0;i<30;i++){
+        setTimeout(createHeart, i*50);
+    }
+    setTimeout(()=>{
+        giftText.style.display='block';
+    },2000);
+}
+</script>
+
+</body>
+</html>
