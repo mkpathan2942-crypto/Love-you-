@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Someone Special ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+        .screen {
+            display: none;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .active {
+            display: flex;
+        }
+        button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #ff4d6d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="screen1" class="screen active">
+    <h1>For The Most Beautiful Girl In My Life ❤️</h1>
+    <button onclick="next(2)">Tap Here</button>
+</div>
+
+<div id="screen2" class="screen">
+    <h1>HER NAME</h1>
+    <button onclick="next(3)">Next</button>
+</div>
+
+<div id="screen3" class="screen">
+    <p>You are not just a part of my life,<br>
+    You are the reason my life feels beautiful.</p>
+    <button onclick="next(4)">Next</button>
+</div>
+
+<div id="screen4" class="screen">
+    <p>Why You Are So Special To Me</p>
+    <p>Your smile fixes my worst days<br>
+    Your voice is my favorite sound<br>
+    Your presence makes everything better<br>
+    You are my peace, my happiness, my home</p>
+    <button onclick="next(5)">Next</button>
+</div>
+
+<div id="screen5" class="screen">
+    <h2>I Love You Today, Tomorrow, And Forever ❤️</h2>
+</div>
+
+<script>
+function next(n){
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen'+n).classList.add('active');
+}
+</script>
+
+</body>
+</html>
