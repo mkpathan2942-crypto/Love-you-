@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>For Ummeed ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Screens -->
+<div id="s1" class="screen active">
+    <h2>Sirf Ummeed hi ye surprise open kar sakti hai 💖</h2>
+    <button onclick="next(2)">Next</button>
+</div>
+
+<div id="s2" class="screen">
+    <h2>Me kese man lu ki aap meri jaan Ummeed hi ho 😁😁, is liye password dalna pdega 😉😉</h2>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="s3" class="screen">
+    <h2>Yes! Ab ye meri Ummeed hi he, aapke liye Best surprise he jaan 😘😘😘</h2>
+    <button onclick="next(4)">Next</button>
+</div>
+
+<div id="s4" class="screen">
+    <h2>Kya tum Murshid se pyaar karti ho? 😍</h2>
+    <button onclick="next(5)">Yes 💖</button>
+    <button onclick="next(5)">Obviously Yes 😘</button>
+    <button onclick="next(5)">Bilkul Yes ❤️</button>
+</div>
+
+<div id="s5" class="screen">
+    <h2>Aage badhne ke liye button pakdo 😜</h2>
+    <button id="runBtn">Catch Me 😏</button>
+</div>
+
+<!-- Mini Love Screens -->
+<div id="s6" class="screen"><h2>My sweetheart 😘</h2><button onclick="next(7)">Next</button></div>
+<div id="s7" class="screen"><h2>Meri Pyari Jaan 😘</h2><button onclick="next(8)">Next</button></div>
+<div id="s8" class="screen"><h2>Meri Mohabbat 😘😘</h2><button onclick="next(9)">Next</button></div>
+<div id="s9" class="screen"><h2>My Mehram 😘😘</h2><button onclick="next(10)">Next</button></div>
+
+<!-- Compliment Screens -->
+<div id="s10" class="screen"><h2>Tumhari smile meri duniya roshan kar deti hai ✨</h2><button onclick="next(11)">Next</button></div>
+<div id="s11" class="screen"><h2>Tumhari aankhon me meri khushi basi hai 💖</h2><button onclick="next(12)">Next</button></div>
+<div id="s12" class="screen"><h2>Tum meri zindagi ka sabse khoobsurat hissa ho 💗</h2><button onclick="next(13)">Next</button></div>
+<div id="s13" class="screen"><h2>Har pal tumhare saath meri zindagi khubsurat hai 🌸</h2><button onclick="next(14)">Next</button></div>
+<div id="s14" class="screen"><h2> Tum meri jaan ho, meri Ummeed 😘</h2><button onclick="next(15)">Next</button></div>
+
+<!-- Story Screens (15–32) -->
+<div id="s15" class="screen"><h2>Ummeed 🌹 Tum naam nahi, meri aadat ho 💓</h2><button onclick="next(16)">Next</button></div>
+<div id="s16" class="screen"><h2>Pata nahi tumse kaise mila, par ab tumhare bina rehna mushkil hai 💞</h2><button onclick="next(17)">Next</button></div>
+<div id="s17" class="screen"><h2>Tum meri zindagi ki wo kami ho, jo tum milne ke baad puri ho gayi ✨</h2><button onclick="next(18)">Next</button></div>
+<div id="s18" class="screen"><h2>Har pal tumhare saath meri zindagi ek kahani lagti hai 💖</h2><button onclick="next(19)">Next</button></div>
+<div id="s19" class="screen"><h2>Tumhare bina sab adhura lagta hai 🌸</h2><button onclick="next(20)">Next</button></div>
+<div id="s20" class="screen"><h2>Tum meri soch se zyada khoobsurat ho 💗</h2><button onclick="next(21)">Next</button></div>
+<div id="s21" class="screen"><h2>Tumhari muskaan meri khushi ka raaz hai 😍</h2><button onclick="next(22)">Next</button></div>
+<div id="s22" class="screen"><h2>Har din tumhare saath mere liye ek nayi shuruaat hai 💕</h2><button onclick="next(23)">Next</button></div>
+<div id="s23" class="screen"><h2>Tum meri duniya ka sabse pyara hissa ho 💖</h2><button onclick="next(24)">Next</button></div>
+<div id="s24" class="screen"><h2>Tumhari aankhen meri rooh tak ko choo leti hai ✨</h2><button onclick="next(25)">Next</button></div>
+<div id="s25" class="screen"><h2>Tumhari baaton me ek alag hi mithaas hai 🌸</h2><button onclick="next(26)">Next</button></div>
+<div id="s26" class="screen"><h2>Har pal tumhare saath meri duniya roshan hai 💞</h2><button onclick="next(27)">Next</button></div>
+<div id="s27" class="screen"><h2>Tum meri zindagi ki wo khushi ho jo lafzon me nahi bata sakta 😘</h2><button onclick="next(28)">Next</button></div>
+<div id="s28" class="screen"><h2>Tumhare bina sab kuch adhoora lagta hai 💗</h2><button onclick="next(29)">Next</button></div>
+<div id="s29" class="screen"><h2>Tum meri har dhadkan ka sabab ho 💖</h2><button onclick="next(30)">Next</button></div>
+<div id="s30" class="screen"><h2>Tumhari saari baatein meri zindagi ke rang bhar deti hai 🌸</h2><button onclick="next(31)">Next</button></div>
+<div id="s31" class="screen"><h2>Tum meri zindagi ka sabse anmol hissa ho 💞</h2><button onclick="next(32)">Next</button></div>
+<div id="s32" class="screen"><h2>Main hamesha tumhare saath rahna chahta hoon 💖</h2><button onclick="next(33)">Next</button></div>
+
+<!-- Promise Screens -->
+<div id="s33" class="screen"><h2>Main hamesha tumhara saath dunga 🤝</h2><button onclick="next(34)">Next</button></div>
+<div id="s34" class="screen"><h2>Chahe kuch bhi ho jaye, main tumhe kabhi akela nahi chhodunga 💗</h2><button onclick="next(35)">Next</button></div>
+
+<!-- Surprise Yes/No -->
+<div id="s35" class="screen">
+    <h2>Meri jaan, aapke liye ek aur surprise hai 😘 Dekhna chahoge?</h2>
+    <button id="yesBtn" onclick="next(36)">Yes 😍</button>
+    <button id="noBtn" onclick="increaseYes()">No 😅</button>
+</div>
+
+<!-- Gift Box Screen -->
+<div id="s36" class="screen">
+    <h2>Click the gift box 🎁</h2>
+    <div class="gift" onclick="giftClicked()">🎁</div>
+    <div id="giftText">Love you meri Ummeed 😘</div>
+</div>
+
+<!-- Thank You -->
+<div id="s37" class="screen"><h2>Meri life me aane ke liye shukriya 🙏❤️</h2><button onclick="next(38)">Next</button></div>
+
+<!-- Final -->
+<div id="s38" class="screen"><h2>Aapka Murshid 💝</h2></div>
+
+<script src="script.js"></script>
+</body>
+</html>
