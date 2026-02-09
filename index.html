@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Ummeed ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    background: linear-gradient(-45deg,#ff4d6d,#ff758f,#6a11cb,#2575fc);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+    position:relative;
+}
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+.screen{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:30px;
+    position:relative;
+}
+.active{ display:flex; animation:fade 1s ease; }
+@keyframes fade{
+    from{opacity:0;transform:scale(0.95);}
+    to{opacity:1;transform:scale(1);}
+}
+button,input{
+    margin-top:25px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+}
+button{
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+input{
+    width:200px;
+    text-align:center;
+}
+#runBtn{
+    position:absolute;
+    cursor:pointer;
+}
+#yesBtn{
+    transition: all 0.3s ease;
+}
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    user-select:none;
+    position:relative;
+}
+.heart{
+    position:absolute;
+    color:pink;
+    font-size:20px;
+    user-select:none;
+    animation:fall 2s linear forwards;
+}
+@keyframes fall{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-50px);opacity:0;}
+}
+.typewriter{
+  display:inline-block;
+  overflow:hidden;
+  border-right: .1em solid rgba(255,255,255,0.5);
+  white-space: nowrap;
+  animation:typing 3s steps(40,end), blink .5s step-end infinite alternate;
+}
+@keyframes typing{
+  from{width:0}
+  to{width:100%}
+}
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+#giftText{
+    font-size:30px;
+    margin-top:20px;
+    display:none;
+    color:#ff4d6d;
+    font-weight:bold;
+    animation:fadeIn 2s ease forwards;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(0.8);}
+    to{opacity:1;transform:scale(1);}
+}
+</style>
+</head>
+<body>
+
+<div id="hearts-container"></div>
+
+<!-- Screen 1: Password -->
+<div id="s1" class="screen active">
+    <h2>Sirf Ummeed hi ye surprise open kar sakti hai 💖</h2>
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="checkPass()">Open 💘</button>
+</div>
+
+<!-- Screen 2: Funny Love Question -->
+<div id="s2" class="screen">
+    <h2>Kya tum Murshid se pyaar karti ho? 😍</h2>
+    <button onclick="next(3)">Yes 💖</button>
+    <button onclick="next(3)">Obviously Yes 😘</button>
+    <button onclick="next(3)">Bilkul Yes ❤️</button>
+</div>
+
+<!-- Screen 3: Running Button Fun -->
+<div id="s3" class="screen">
+    <h2>Aage badhne ke liye button pakdo 😜</h2>
+    <button id="runBtn" onmouseover="moveBtn()" onclick="next(4)">Catch Me</button>
+</div>
+
+<!-- Romantic Story Screens -->
+<div id="s4" class="screen"><h2 class="typewriter">Ummeed 🌹 Tum naam nahi, meri aadat ho 💓</h2><button onclick="next(5)">Next</button></div>
+<div id="s5" class="screen"><h2 class="typewriter">Pata nahi tumse kaise mila, par ab tumhare bina rehna mushkil hai 💞</h2><button onclick="next(6)">Next</button></div>
+<div id="s6" class="screen"><h2 class="typewriter">Tum meri zindagi ki wo kami ho, jo tum milne ke baad puri ho gayi ✨</h2><button onclick="next(7)">Next</button></div>
+<div id="s7" class="screen"><h2 class="typewriter">Tumhari smile mera mood theek kar deti hai 😊</h2><button onclick="next(8)">Next</button></div>
+<div id="s8" class="screen"><h2 class="typewriter">Tumhari awaaz mera favourite sound hai 🎶</h2><button onclick="next(9)">Next</button></div>
+<div id="s9" class="screen"><h2 class="typewriter">Tumhara saath sab kuch easy bana deta hai ✨</h2><button onclick="next(10)">Next</button></div>
+<div id="s10" class="screen"><h2 class="typewriter">Har din tumhare saath ek nayi memory ban jati hai 📖💫</h2><button onclick="next(11)">Next</button></div>
+<div id="s11" class="screen"><h2 class="typewriter">Main hamesha tumhara respect karunga ❤️</h2><button onclick="next(12)">Next</button></div>
+<div id="s12" class="screen"><h2 class="typewriter">Main hamesha tumhara saath dunga 🤝</h2><button onclick="next(13)">Next</button></div>
+<div id="s13" class="screen"><h2 class="typewriter">Chahe kuch bhi ho jaye, main tumhe kabhi akela nahi chhodunga 💗</h2><button onclick="next(14)">Next</button></div>
+<div id="s14" class="screen"><h2 class="typewriter">Tum meri zindagi ka sabse khoobsurat hissa ho ✨</h2><button onclick="next(15)">Next</button></div>
+<div id="s15" class="screen"><h2 class="typewriter">Tumhari hasi meri favourite cheez hai 😊</h2><button onclick="next(16)">Next</button></div>
+<div id="s16" class="screen"><h2 class="typewriter">Tum meri har dua ka jawab ho 🙏💖</h2><button onclick="next(17)">Next</button></div>
+<div id="s17" class="screen"><h2 class="typewriter">Tum meri duniya ko roshan karti ho 🌟</h2><button onclick="next(18)">Next</button></div>
+<div id="s18" class="screen"><h2 class="typewriter">Tum meri inspiration ho 💝</h2><button onclick="next(19)">Next</button></div>
+
+<!-- Promise Screens -->
+<div id="s19" class="screen"><h2 class="typewriter">Main hamesha tumhara saath dunga 🤝</h2><button onclick="next(20)">Next</button></div>
+<div id="s20" class="screen"><h2 class="typewriter">Chahe kuch bhi ho jaye, main tumhe kabhi akela nahi chhodunga 💗</h2><button onclick="next(21)">Next</button></div>
+
+<!-- Surprise Offer Screen -->
+<div id="s21" class="screen">
+<h2>Meri jaan, aapke liye ek aur surprise hai 😘<br>Dekhna chahoge?</h2>
+<button id="yesBtn" onclick="next(22)">Yes 💖</button>
+<button id="noBtn" onclick="noClicked()">No 😜</button>
+</div>
+
+<!-- Gift Box Screen -->
+<div id="s22" class="screen">
+<h2>Yay! Ek gift box 🎁</h2>
+<div class="gift" onclick="giftClicked()">🎁</div>
+<div id="giftText">Love you meri Ummeed 😘</div>
+</div>
+
+<!-- Thank You Screen -->
+<div id="s23" class="screen"><h2 class="typewriter">Meri life me aane ke liye shukriya 🙏❤️</h2><button onclick="next(24)">Next</button></div>
+
+<!-- Final Screen -->
+<div id="s24" class="screen"><h2 class="typewriter">Aapka Murshid 💝</h2></div>
+
+<script>
+// Hearts falling on background (continuous)
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className='heart';
+    heart.style.left=Math.random()*90+'%';
+    heart.style.fontSize=(10+Math.random()*20)+'px';
+    heart.innerText='💖';
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove()},2000);
+}
+setInterval(createHeart,300);
+
+// Screen navigation
+function next(n){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('s'+n).classList.add('active');
+}
+
+// Password check
+function checkPass(){
+    let p = document.getElementById('pass').value;
+    if(p.toLowerCase() === "love you"){
+        next(2);
+    } else{
+        alert("Oops! Galat password 💔 Try again 😜");
+    }
+}
+
+// Running button logic
+let runCount = 0;
+function moveBtn(){
+    let btn = document.getElementById('runBtn');
+    if(runCount<5){
+        let x = Math.random()*70;
+        let y = Math.random()*70;
+        btn.style.left = x+"%";
+        btn.style.top = y+"%";
+        runCount++;
+    } else {
+        btn.style.position="static"; 
+    }
+}
+
+// Surprise Yes/No trick
+let yesBtn = document.getElementById('yesBtn');
+let noClickCount = 0;
+function noClicked(){
+    noClickCount++;
+    yesBtn.style.transform = `scale(${1 + noClickCount*0.2})`;
+}
+
+// Gift box click → 2s hearts then show message
+function giftClicked(){
+    const giftText = document.getElementById('giftText');
+    // Start hearts inside box for 2 seconds
+    for(let i=0;i<30;i++){
+        setTimeout(createHeart, i*50);
+    }
+    setTimeout(()=>{
+        giftText.style.display='block';
+    },2000);
+}
+</script>
+
+</body>
+</html>
