@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Ummeed ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    background: linear-gradient(120deg,#ff758c,#ff7eb3);
+}
+.screen{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:30px;
+    position:relative;
+}
+.active{ display:flex; animation:fade 1s ease; }
+@keyframes fade{
+    from{opacity:0;transform:scale(0.95);}
+    to{opacity:1;transform:scale(1);}
+}
+button,input{
+    margin-top:25px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+}
+button{
+    background:white;
+    color:#ff4d6d;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,255,255,0.5);
+}
+input{
+    width:250px;
+    text-align:center;
+}
+#runBtn{
+    position:absolute;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+#yesBtn{
+    transition: all 0.3s ease;
+}
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    user-select:none;
+    position:relative;
+}
+.heart{
+    position:absolute;
+    color:pink;
+    font-size:20px;
+    user-select:none;
+    animation:fall 2s linear forwards;
+}
+@keyframes fall{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-50px);opacity:0;}
+}
+#giftText{
+    font-size:30px;
+    margin-top:20px;
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<!-- Screens -->
+<div id="s1" class="screen active">
+    <h2>Sirf Ummeed hi ye surprise open kar sakti hai 💖</h2>
+    <button onclick="next(2)">Next</button>
+</div>
+
+<div id="s2" class="screen">
+    <h2>Me kese man lu ki aap meri jaan Ummeed hi ho 😁😁, is liye password dalna pdega 😉😉</h2>
+    <input type="password" id="passwordInput" placeholder="Enter Password">
+    <button onclick="checkPassword()">Submit</button>
+</div>
+
+<div id="s3" class="screen">
+    <h2>Yes! Ab ye meri Ummeed hi he, aapke liye Best surprise he jaan 😘😘😘</h2>
+    <button onclick="next(4)">Next</button>
+</div>
+
+<div id="s4" class="screen">
+    <h2>Kya tum Murshid se pyaar karti ho? 😍</h2>
+    <button onclick="next(5)">Yes 💖</button>
+    <button onclick="next(5)">Obviously Yes 😘</button>
+    <button onclick="next(5)">Bilkul Yes ❤️</button>
+</div>
+
+<div id="s5" class="screen">
+    <h2>Aage badhne ke liye button pakdo 😜</h2>
+    <button id="runBtn">Catch Me 😏</button>
+</div>
+
+<!-- Mini Love Screens -->
+<div id="s6" class="screen"><h2>My sweetheart 😘</h2><button onclick="next(7)">Next</button></div>
+<div id="s7" class="screen"><h2>Meri Pyari Jaan 😘</h2><button onclick="next(8)">Next</button></div>
+<div id="s8" class="screen"><h2>Meri Mohabbat 😘😘</h2><button onclick="next(9)">Next</button></div>
+<div id="s9" class="screen"><h2>My Mehram 😘😘</h2><button onclick="next(10)">Next</button></div>
+
+<!-- Taarif / Compliments -->
+<div id="s10" class="screen"><h2>Tumhari smile meri duniya roshan kar deti hai ✨</h2><button onclick="next(11)">Next</button></div>
+<div id="s11" class="screen"><h2>Tumhari aankhon me meri khushi basi hai 💖</h2><button onclick="next(12)">Next</button></div>
+<div id="s12" class="screen"><h2>Tum meri zindagi ka sabse khoobsurat hissa ho 💗</h2><button onclick="next(13)">Next</button></div>
+<div id="s13" class="screen"><h2>Har pal tumhare saath meri zindagi khubsurat hai 🌸</h2><button onclick="next(14)">Next</button></div>
+
+<!-- Story Screens Sample (Add more similarly up to s32) -->
+<div id="s14" class="screen"><h2>Ummeed 🌹 Tum naam nahi, meri aadat ho 💓</h2><button onclick="next(15)">Next</button></div>
+<div id="s15" class="screen"><h2>Pata nahi tumse kaise mila, par ab tumhare bina rehna mushkil hai 💞</h2><button onclick="next(16)">Next</button></div>
+<div id="s16" class="screen"><h2>Tum meri zindagi ki wo kami ho, jo tum milne ke baad puri ho gayi ✨</h2><button onclick="next(17)">Next</button></div>
+
+<!-- Promise Screens -->
+<div id="s33" class="screen"><h2>Main hamesha tumhara saath dunga 🤝</h2><button onclick="next(34)">Next</button></div>
+<div id="s34" class="screen"><h2>Chahe kuch bhi ho jaye, main tumhe kabhi akela nahi chhodunga 💗</h2><button onclick="next(35)">Next</button></div>
+
+<!-- Surprise Yes/No -->
+<div id="s35" class="screen">
+    <h2>Meri jaan, aapke liye ek aur surprise hai 😘 Dekhna chahoge?</h2>
+    <button id="yesBtn" onclick="next(36)">Yes 😍</button>
+    <button id="noBtn" onclick="increaseYes()">No 😅</button>
+</div>
+
+<!-- Gift Box Screen -->
+<div id="s36" class="screen">
+    <h2>Click the gift box 🎁</h2>
+    <div class="gift" onclick="giftClicked()">🎁</div>
+    <div id="giftText">Love you meri Ummeed 😘</div>
+</div>
+
+<!-- Thank You -->
+<div id="s37" class="screen"><h2>Meri life me aane ke liye shukriya 🙏❤️</h2><button onclick="next(38)">Next</button></div>
+
+<!-- Final -->
+<div id="s38" class="screen"><h2>Aapka Murshid 💝</h2></div>
+
+<script>
+let current = 1;
+function next(id){
+    document.getElementById('s'+current).classList.remove('active');
+    current = id;
+    document.getElementById('s'+current).classList.add('active');
+}
+
+// Password check
+function checkPassword(){
+    let val = document.getElementById('passwordInput').value;
+    if(val==="Love you"){
+        next(3); // Post-password screen
+    }else{
+        alert("Oops! Galat password 💔 Try again 😜");
+    }
+}
+
+// Running button
+let runCount=0;
+const runBtn=document.getElementById('runBtn');
+function moveBtn(){
+    if(runCount<5){
+        let x=Math.random()*70;
+        let y=Math.random()*70;
+        runBtn.style.position="absolute";
+        runBtn.style.left=x+"%";
+        runBtn.style.top=y+"%";
+        runCount++;
+    }else{
+        runBtn.style.position="static";
+        runBtn.onclick=()=>next(6);
+    }
+}
+runBtn.onclick=moveBtn;
+
+// Surprise Yes/No trick
+function increaseYes(){
+    const btn=document.getElementById('yesBtn');
+    let w=btn.offsetWidth;
+    let h=btn.offsetHeight;
+    btn.style.width=(w+20)+"px";
+    btn.style.height=(h+10)+"px";
+}
+
+// Gift Box
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className='heart';
+    heart.style.left = Math.random()*90+"%";
+    heart.style.top = Math.random()*90+"%";
+    heart.innerText='💖';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),2000);
+}
+function giftClicked(){
+    for(let i=0;i<30;i++){
+        setTimeout(createHeart,i*50);
+    }
+    setTimeout(()=>{
+        document.getElementById('giftText').style.display='block';
+        const nextBtn=document.createElement('button');
+        nextBtn.innerText="Next 💖";
+        nextBtn.onclick=()=>next(37);
+        nextBtn.style.marginTop="20px";
+        document.getElementById('s36').appendChild(nextBtn);
+    },2000);
+}
+</script>
+
+</body>
+</html>
